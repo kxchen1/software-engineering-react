@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const TUITS_API = "https://cs5500-a2-node.herokuapp.com/api/tuits";
-const USERS_API = "https://cs5500-a2-node.herokuapp.com/apiusers";
+const TUITS_API = "https://cs5500-react.herokuapp.com/api/tuits";
+const USERS_API = "https://cs5500-react.herokuapp.com/api/users";
 
 export const findAllTuits = () =>
     axios.get(TUITS_API)

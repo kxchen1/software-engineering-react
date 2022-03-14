@@ -1,5 +1,5 @@
 import {createUser, deleteUsersByUsername, findAllUsers, findUserById} from "../services/users-service";
-import {createTuit, deleteTuit} from "../services/tuits-service";
+import {createTuit, deleteTuit, findAllTuits, findTuitById} from "../services/tuits-service";
 
 
 describe('can create tuit with REST API', () => {
@@ -65,7 +65,7 @@ describe('can delete tuit wtih REST API', () => {
         const newUser = await createUser(sowell);
         const newTuit = await createTuit(newUser._id, sowellTuit);
 
-        expect(newTuit.tuit).toEqual(ripleyTuit.tuit);
+        expect(newTuit.tuit).toEqual(sowellTuit.tuit);
         const status = await deleteTuit(newTuit._id);
         expect(status.deletedCount).toBeGreaterThanOrEqual(1);
     });
@@ -104,7 +104,7 @@ describe('can retrieve a tuit by their primary key with REST API', () => {
         const existingTuit = await findTuitById(newTuit._id);
 
         // verify retrieved user matches parameter user
-        expect(existingTuit.username).toEqual(adamTuit.tuit);
+        expect(existingTuit.tuit).toEqual(adamTuit.tuit);
         const status = await deleteTuit(newTuit._id);
         expect(status.deletedCount).toBeGreaterThanOrEqual(1);
     });
