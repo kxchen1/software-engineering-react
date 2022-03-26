@@ -10,7 +10,7 @@ const MyTuits = () => {
     useEffect(findMyTuits, []);
     return(
         <Tuits tuits={tuits}
-               refreshTuits={findMyTuits}/>
+               deleteTuits={deleteTuit}/>
     );
 };
 
