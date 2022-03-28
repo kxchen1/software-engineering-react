@@ -5,12 +5,12 @@ import Tuits from "../tuits";
 const MyTuits = () => {
     const [tuits, setTuits] = useState([]);
     const findMyTuits = () =>
-        service.findTuitByUser("my")
+        service.findTuitByUser("me")
             .then(tuits => setTuits(tuits));
     useEffect(findMyTuits, []);
     return(
         <Tuits tuits={tuits}
-               deleteTuits={deleteTuit}/>
+               refrshTuits={findMyTuits()}/>
     );
 };
 
