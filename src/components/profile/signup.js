@@ -7,7 +7,7 @@ const Signup = () => {
     const navigate = useNavigate();
     const signup = () =>
         service.register(newUser)
-            .then(() => navigate('/profile'))
+            .then(() => navigate('/home'))
             .catch(e => alert(e));
     return (
         <div>
