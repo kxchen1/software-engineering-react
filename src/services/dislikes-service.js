@@ -5,7 +5,7 @@ const BASE_URL = 'http://localhost:4000';
 const USERS_API = `${BASE_URL}/api/users`;
 const TUITS_API = `${BASE_URL}/api/tuits`;
 
-const api = axios.create({
+export const api = axios.create({
     withCredentials: true
 });
 
